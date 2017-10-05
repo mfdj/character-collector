@@ -1,7 +1,10 @@
 const connect = require('connect')
+const bodyParser = require('body-parser')
 const handlePost = require('./src/handle-post-middleware')
 
 const app = connect()
+
+app.use(bodyParser.text({type: '*/*'}))
 
 app.use('/weird-echo', handlePost)
 

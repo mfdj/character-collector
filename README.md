@@ -15,7 +15,7 @@ npm test
 node index.js
 ```
 
-Usage post a comma-separated list of URLs to the endpoint and receive the set of non-numeric characters:
+Usage: POST a comma-separated list of URLs to the endpoint and receive the set of non-numeric characters:
 
 ```sh
 curl \

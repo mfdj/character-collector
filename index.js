@@ -1,9 +1,12 @@
 const connect = require('connect')
+const handlePost = require('./src/handle-post-middleware')
 
 const app = connect()
 
-app.use(function (req, res, next) {
-  next(new Error('test'))
+app.use('/weird-echo', handlePost)
+
+app.use('/weird-echo', function(req, res) {
+  res.end('number of urls: ' + req.urls.length)
 })
 
 // generic error to user, full error-stack printed to dev-console

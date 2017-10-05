@@ -21,5 +21,5 @@ Usage: POST a comma-separated list of URLs to the endpoint and receive the set o
 curl \
   -X POST \
   -d 'https://github.com/,https://stackoverflow.com' \
-  http://localhost:3000/chracter-collector
+  http://localhost:3000/character-collector
 ```

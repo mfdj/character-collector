@@ -1,7 +1,7 @@
 {
-  "name": "weird-scraper",
+  "name": "character-collector",
   "version": "1.0.0",
-  "description": "takes a url and returns a set of non-numeric characters",
+  "description": "Scrapes given urls and returns the set of characters contained",
   "main": "index.js",
   "scripts": {
     "test": "mocha"

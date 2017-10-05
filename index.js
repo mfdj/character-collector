@@ -11,14 +11,14 @@ const sumProcessor = require('./src/process-html-sum-middleware')
 // post-body will be parsed to a string; be permissive about content-type so clients can be lazy
 app.use(bodyParser.text({type: '*/*'}))
 
-// NOTE: would probably refactor the `weird-echo` routing to it's own module but
+// NOTE: would probably refactor the `chracter-collector` routing to it's own module but
 // at present it's the only end-point
 
-app.use('/weird-echo', handlePost)
-app.use('/weird-echo', urlFetcher)
-app.use('/weird-echo', sumProcessor)
+app.use('/chracter-collector', handlePost)
+app.use('/chracter-collector', urlFetcher)
+app.use('/chracter-collector', sumProcessor)
 
-app.use('/weird-echo', function(req, res) {
+app.use('/chracter-collector', function(req, res) {
   console.log('length of htmlSum: ' + req.htmlSum.length)
   console.log('length of final result: ' + req.weirdEchoResult.length)
 

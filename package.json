@@ -9,6 +9,7 @@
   "author": "Mark Fox",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.1.2",
     "connect": "^3.6.5",
     "mocha": "^4.0.0"
   }

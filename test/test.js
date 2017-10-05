@@ -1,7 +1,7 @@
 const assert = require('assert')
 const expect = require('chai').expect
 
-// handle-post middleware
+// handle-post
 
 describe('handle-post middleware', function() {
 
@@ -28,7 +28,13 @@ describe('handle-post middleware', function() {
   })
 })
 
-describe('sum response', function() {
+// TODO: url-fetcher tests
+// describe('handle-post middleware', function() {
+// })
+
+// process-html-sum
+
+describe('process-html-sum middleware', function() {
 
   const processor = require('../src/process-html-sum-middleware')
 

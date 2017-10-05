@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const app = connect()
 const handlePost = require('./src/handle-post-middleware')
 const urlFetcher = require('./src/url-fetcher-middleware')
+const sumProcessor = require('./src/process-html-sum-middleware')
 
 // post-body will be parsed to a string; be permissive about content-type so clients can be lazy
 app.use(bodyParser.text({type: '*/*'}))
@@ -15,13 +16,13 @@ app.use(bodyParser.text({type: '*/*'}))
 
 app.use('/weird-echo', handlePost)
 app.use('/weird-echo', urlFetcher)
+app.use('/weird-echo', sumProcessor)
 
 app.use('/weird-echo', function(req, res) {
-  let result = ''
-  result += 'number of urls: ' + req.urls.length
-  result += 'length of htmlSum: ' + req.htmlSum.length
+  console.log('length of htmlSum: ' + req.htmlSum.length)
+  console.log('length of final result: ' + req.weirdEchoResult.length)
 
-  res.end(result)
+  res.end(req.weirdEchoResult)
 })
 
 // generic error to user, full error-stack printed to dev-console (should be last in the stack)

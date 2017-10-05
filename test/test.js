@@ -27,3 +27,28 @@ describe('handle-post middleware', function() {
     })
   })
 })
+
+describe('sum response', function() {
+
+  const processor = require('../src/process-html-sum-middleware')
+
+  describe('generates the "weird-echo" response', function() {
+    it('it handles a custom htmlString property and parses it for the final result', function() {
+      let req = {
+        htmlSum: "abcdxyz1234daffazh2aaah3114"
+      }
+
+      processor(req, {}, function(){})
+
+      assert.strictEqual(req.weirdEchoResult, 'abcdxyzfh')
+    })
+
+    it("it sets an empty result when there is no htmlSum", function() {
+      let req = {}
+
+      processor(req, {}, function(){})
+
+      assert.strictEqual(req.weirdEchoResult, '')
+    })
+  })
+})
